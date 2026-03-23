@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import ProjectCard, { cardVariants } from '../ProjectCard/ProjectCard';
 
@@ -30,10 +30,16 @@ function SectionHeading({ number, children }) {
 
 function ProjectGrid({ projects = [] }) {
   const { t } = useTranslation();
-  const [activeTag, setActiveTag] = useState(null);
+  const [activeTab, setActiveTab] = useState('team');
 
-  const allTags = [...new Set(projects.flatMap((p) => p.tags))].sort();
-  const filtered = activeTag ? projects.filter((p) => p.tags.includes(activeTag)) : projects;
+  const teamProjects = projects.filter((p) => p.isTeam);
+  const personalProjects = projects.filter((p) => !p.isTeam);
+  const filtered = activeTab === 'team' ? teamProjects : personalProjects;
+
+  const tabs = [
+    { key: 'team', label: t('projects.teamProject'), count: teamProjects.length },
+    { key: 'personal', label: t('projects.personalProject'), count: personalProjects.length },
+  ];
 
   return (
     <section id="projects" className="max-w-6xl mx-auto py-24 px-4 sm:px-8">
@@ -45,52 +51,46 @@ function ProjectGrid({ projects = [] }) {
       >
         <SectionHeading number="01. Projects">{t('projects.title')}</SectionHeading>
 
-        {/* 태그 필터 */}
-        {allTags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-8">
+        {/* 탭 */}
+        <div className="flex gap-1 p-1 mb-10 rounded-xl bg-slate-100 dark:bg-white/5 w-fit border border-slate-200 dark:border-white/10">
+          {tabs.map((tab) => (
             <button
-              onClick={() => setActiveTag(null)}
-              className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
-                activeTag === null
-                  ? 'bg-indigo-500 text-white shadow-md shadow-indigo-500/25'
-                  : 'border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300'
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`relative px-5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                activeTab === tab.key
+                  ? 'bg-white dark:bg-indigo-500/90 text-indigo-600 dark:text-white shadow-sm'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'
               }`}
             >
-              {t('projects.allTags')}
-            </button>
-            {allTags.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => setActiveTag(tag === activeTag ? null : tag)}
-                className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
-                  activeTag === tag
-                    ? 'bg-indigo-500 text-white shadow-md shadow-indigo-500/25'
-                    : 'border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300'
+              {tab.label}
+              <span
+                className={`ml-2 text-xs px-1.5 py-0.5 rounded-full ${
+                  activeTab === tab.key
+                    ? 'bg-indigo-100 dark:bg-white/20 text-indigo-600 dark:text-white'
+                    : 'bg-slate-200 dark:bg-white/10 text-slate-500 dark:text-slate-400'
                 }`}
               >
-                {tag}
-              </button>
-            ))}
-          </div>
-        )}
+                {tab.count}
+              </span>
+            </button>
+          ))}
+        </div>
 
-        {filtered.length === 0 ? (
-          <p className="text-center text-slate-400 dark:text-slate-500 py-16">
-            {t('projects.noProjects')}
-          </p>
-        ) : (
+        <AnimatePresence mode="wait">
           <motion.div
+            key={activeTab}
             variants={gridVariants}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-40px' }}
+            animate="visible"
+            exit={{ opacity: 0, y: 8, transition: { duration: 0.15 } }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {filtered.map((project) => (
               <ProjectCard key={project.id} {...project} />
             ))}
           </motion.div>
-        )}
+        </AnimatePresence>
       </motion.div>
     </section>
   );

@@ -30,14 +30,14 @@ export const PROFILE = {
     {
       school: '영진전문대학교',
       major: '컴퓨터공학과',
-      period: '재학중',
+      period: '2025.03 ~ 현재',
       status: '재학중',
       gpa: null,
     },
     {
       school: '영진전문대학교',
       major: '컴퓨터정보계열',
-      period: '졸업',
+      period: '2023.03 ~ 2025.02',
       status: '졸업',
       gpa: '3.3 / 4.5',
     },
