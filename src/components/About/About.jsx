@@ -95,13 +95,15 @@ function About() {
                 <li key={i} className="flex flex-col gap-0.5">
                   <div className="flex items-center justify-between gap-2">
                     <span className="font-semibold text-slate-800 dark:text-white text-sm">
-                      {edu.school}
+                      {t(`profileData.education.${i}.school`, edu.school)}
                     </span>
                     <span className="text-xs text-slate-400 dark:text-slate-500 shrink-0">
-                      {edu.status}
+                      {t(`profileData.education.${i}.status`, edu.status)}
                     </span>
                   </div>
-                  <span className="text-xs text-slate-500 dark:text-slate-400">{edu.major}</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">
+                    {t(`profileData.education.${i}.major`, edu.major)}
+                  </span>
                   <div className="flex items-center gap-3 mt-0.5">
                     {edu.period && (
                       <span className="text-xs text-slate-400 dark:text-slate-500">{edu.period}</span>
@@ -127,9 +129,11 @@ function About() {
                 <li key={i} className="flex items-start justify-between gap-2">
                   <div className="flex flex-col gap-0.5">
                     <span className="text-sm font-semibold text-slate-800 dark:text-white">
-                      {cert.name}
+                      {t(`profileData.certifications.${i}.name`, cert.name)}
                     </span>
-                    <span className="text-xs text-slate-400 dark:text-slate-500">{cert.org}</span>
+                    <span className="text-xs text-slate-400 dark:text-slate-500">
+                      {t(`profileData.certifications.${i}.org`, cert.org)}
+                    </span>
                   </div>
                   <div className="flex flex-col items-end gap-0.5 shrink-0">
                     <span className="text-xs text-slate-400 dark:text-slate-500">{cert.year}</span>
@@ -153,7 +157,7 @@ function About() {
                 <li key={i} className="flex flex-col gap-0.5">
                   <div className="flex items-start justify-between gap-2">
                     <span className="text-sm font-semibold text-slate-800 dark:text-white leading-snug">
-                      {act.name}
+                      {t(`profileData.activities.${i}.name`, act.name)}
                     </span>
                     <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0 ${
                       act.type === '교육'
@@ -163,10 +167,12 @@ function About() {
                       {act.type}
                     </span>
                   </div>
-                  <span className="text-xs text-indigo-500 dark:text-indigo-400">{act.org}</span>
+                  <span className="text-xs text-indigo-500 dark:text-indigo-400">
+                    {t(`profileData.activities.${i}.org`, act.org)}
+                  </span>
                   <span className="text-xs text-slate-400 dark:text-slate-500">{act.period}</span>
                   <span className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                    {act.description}
+                    {t(`profileData.activities.${i}.description`, act.description)}
                   </span>
                   {i < PROFILE.activities.length - 1 && (
                     <div className="mt-2 h-px bg-slate-100 dark:bg-white/5" />

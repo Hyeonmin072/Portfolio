@@ -11,8 +11,11 @@ export const cardVariants = {
   },
 };
 
-function ProjectCard({ title, description, tags = [], demoUrl, codeUrl, backendUrl, thumbnail, isTeam, role, period }) {
+function ProjectCard({ title, titleKey, description, descriptionKey, tags = [], demoUrl, codeUrl, backendUrl, thumbnail, isTeam, role, roleKey, period }) {
   const { t } = useTranslation();
+  const displayTitle = titleKey ? t(titleKey, title) : title;
+  const displayDescription = descriptionKey ? t(descriptionKey, description) : description;
+  const displayRole = roleKey ? t(roleKey, role) : role;
 
   return (
     <motion.article
@@ -53,17 +56,17 @@ function ProjectCard({ title, description, tags = [], demoUrl, codeUrl, backendU
         </div>
 
         <h3 className="text-base font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">
-          {title}
+          {displayTitle}
         </h3>
 
-        {role && (
+        {displayRole && (
           <p className="text-xs text-indigo-500 dark:text-indigo-400 font-medium mb-2">
-            {t('projects.role')}: {role}
+            {t('projects.role')}: {displayRole}
           </p>
         )}
 
         <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-5">
-          {description}
+          {displayDescription}
         </p>
 
         {tags.length > 0 && (
