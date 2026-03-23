@@ -48,20 +48,20 @@ export const PROJECTS = [
   },
   {
     id: 5,
-    title: 'BGHDashboard — 이터널리턴 전적 분석',
+    title: 'BGHDashboard — 디스코드 챗봇 관리 대시보드',
     description:
-      '이터널리턴 게임의 유저 전적·캐릭터 통계·랭크 현황을 시각화하는 대시보드. React + TypeScript + Tailwind CSS로 구현했습니다.',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+      'BGH Discord 챗봇을 관리·모니터링하는 풀스택 대시보드. React + TypeScript 프론트엔드로 챗봇 상태, 로그, 설정을 실시간으로 관리합니다.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Docker'],
     codeUrl: 'https://github.com/Hyeonmin072/BGHDashboard',
     isTeam: false,
     period: '2024',
   },
   {
     id: 6,
-    title: 'ERGG — 이터널리턴 게임 백엔드 API',
+    title: 'ERGG — 이터널리턴 게임 전적 분석',
     description:
-      '이터널리턴 게임 데이터를 처리하는 Spring Boot 백엔드 API 서버. Spring Security 인증, JPA + MySQL 데이터 관리.',
-    tags: ['Java', 'Spring Boot', 'Spring Security', 'MySQL', 'JPA', 'Docker'],
+      '이터널리턴 게임 API를 활용한 유저 전적 조회 및 통계 분석 서비스. Spring Boot 기반 백엔드로 게임 데이터를 파싱하고 캐릭터·무기·순위 통계를 제공합니다.',
+    tags: ['Java', 'Spring Boot', 'MySQL', 'Docker', 'REST API'],
     codeUrl: 'https://github.com/Hyeonmin072/ERGG',
     isTeam: false,
     period: '2024',
