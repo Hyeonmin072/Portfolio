@@ -29,6 +29,33 @@
     "personalProject": "個人プロジェクト",
     "role": "担当役割"
   },
+  "projectData": {
+    "hairism": {
+      "title": "Hairism — ヘアサロン予約プラットフォーム",
+      "description": "ヘアサロン検索、デザイナープロフィール・予約・決済・レビューを統合したフルスタックWebサービス。Figmaによる画面設計からフロントエンド全般実装、ERD設計、チームリーダーを担当。",
+      "role": "フロントエンド全般 / チームリーダー"
+    },
+    "gamesnap": {
+      "title": "GameSnap — ゲームソーシャルプラットフォーム",
+      "description": "ゲーマー向けソーシャルコミュニティプラットフォーム。ユーザーフレンドリーなUI/UX設計・実装、ERD設計、AWS EC2デプロイ及び発表を主導。",
+      "role": "フロントエンド / 企画・ERD設計"
+    },
+    "hyeonAutoTrade": {
+      "description": "RSI・MACD・ボリンジャーバンド等のテクニカル指標を活用したPython暗号通貨自動売買ボット。Binance API連携、Flaskダッシュボード、WebSocketリアルタイムストリーミング、Dockerデプロイに対応。"
+    },
+    "bghChatBot": {
+      "description": "Discordサーバー用AIチャットボット。LSTMモデルによるチャット確率予測、埋め込みベースの文書類似度検索、会話自動要約機能を提供。Supabase DBと連携。"
+    },
+    "bghDashboard": {
+      "description": "BGH Discordチャットボットを管理・モニタリングするフルスタックダッシュボード。React + TypeScriptフロントエンドでボットの状態、ログ、設定をリアルタイム管理。"
+    },
+    "ergg": {
+      "description": "エターナルリターンゲームAPIを活用したユーザー戦績照会・統計分析サービス。Spring Bootベースのバックエンドでゲームデータを解析し、キャラクター・武器・ランキング統計を提供。"
+    },
+    "culcomApp": {
+      "description": "Flutter + Firebaseベースのコミュニティ管理モバイルアプリ。会員認証、掲示板、チャット、出席管理、支店管理、管理者機能を含む総合プラットフォーム。"
+    }
+  },
   "about": {
     "title": "紹介",
     "bio": "はじめまして、フルスタックエンジニアのキム・ヒョンミン（金炫敃）です。「正しく動き、速く動くコード」を目標に、バックエンドの処理速度・安定性とフロントエンドのレンダリング効率・ユーザー体験を同時に考えながら開発に取り組んでいます。Figmaを用いた画面設計からReact・Spring Bootのフルスタック実装、Python自動化、Flutterアプリ開発まで幅広く経験しています。",
@@ -36,6 +63,25 @@
     "educationTitle": "学歴",
     "certificationsTitle": "資格 / 語学",
     "activitiesTitle": "経験 / 活動 / 教育"
+  },
+  "profileData": {
+    "education": {
+      "0": { "school": "永進専門大学校", "major": "コンピュータ工学科", "status": "在学中" },
+      "1": { "school": "永進専門大学校", "major": "コンピュータ情報系列", "status": "卒業" },
+      "2": { "school": "スンシム高校", "major": "文系", "status": "卒業" }
+    },
+    "certifications": {
+      "0": { "name": "情報処理産業技師", "org": "韓国産業人力公団" },
+      "1": { "name": "JPT 635点", "org": "日本語" },
+      "2": { "name": "JLPT N2 / PASS", "org": "日本語" },
+      "3": { "name": "GTQ（グラフィック技術資格）1級", "org": "韓国生産性本部" }
+    },
+    "activities": {
+      "0": { "name": "コードイット — JavaScript プログラミング 基礎・中級", "org": "コードイット", "description": "JavaScript基礎文法、制御構造、関数、配列・オブジェクト、DOM操作の課程修了" },
+      "1": { "name": "ソフトウェア職群アルゴリズムコーディングテスト（C言語）", "org": "ユンソンコンピュータデザインアカデミー", "description": "C言語によるキュー、スタック、ソート・探索アルゴリズムの教育修了" },
+      "2": { "name": "Pythonプログラミング 基礎から応用まで", "org": "ユンソンコンピュータデザインアカデミー", "description": "Pythonによるデータ構造及びアルゴリズムの教育修了" },
+      "3": { "name": "日韓合同高校留学生交流参加", "org": "学内活動", "description": "日本人留学生と4週間の語学交換・韓国文化紹介活動" }
+    }
   },
   "contact": {
     "title": "お問い合わせ",
@@ -46,6 +92,14 @@
   "footer": {
     "rights": "全著作権所有。",
     "madeWith": "で制作"
+  },
+  "certType": {
+    "자격증": "資格",
+    "어학": "語学"
+  },
+  "actType": {
+    "교육": "教育",
+    "활동": "活動"
   },
   "language": {
     "ko": "한국어",

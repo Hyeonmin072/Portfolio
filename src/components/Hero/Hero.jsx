@@ -57,6 +57,9 @@ function Hero() {
                 <span className="text-slate-900 dark:text-white">こんにちは,</span>
                 <br />
                 <span className="gradient-text">金炫敃</span>
+                <span className="text-2xl sm:text-3xl font-normal text-slate-400 dark:text-slate-500 ml-2">
+                  (キム・ヒョンミン)
+                </span>
                 <span className="text-slate-900 dark:text-white">です.</span>
               </>
             )}
