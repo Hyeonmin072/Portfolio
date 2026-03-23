@@ -9,16 +9,16 @@ function LanguageSwitcher() {
   const { i18n } = useTranslation();
 
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-1 p-0.5 rounded-lg bg-slate-100 dark:bg-white/5">
       {LANGUAGES.map(({ code, label }) => (
         <button
           key={code}
           onClick={() => i18n.changeLanguage(code)}
           aria-label={`Switch to ${label}`}
-          className={`px-2.5 py-1 rounded-md text-xs font-medium transition-colors ${
+          className={`px-2.5 py-1 rounded-md text-xs font-medium transition-all duration-200 ${
             i18n.language === code
-              ? 'bg-violet-500 text-white'
-              : 'text-gray-600 dark:text-white/67 hover:bg-gray-100 dark:hover:bg-navy-700'
+              ? 'bg-white dark:bg-indigo-500 text-indigo-600 dark:text-white shadow-sm'
+              : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'
           }`}
         >
           {label}
