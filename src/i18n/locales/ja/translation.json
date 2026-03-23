@@ -9,6 +9,14 @@
     "about": "紹介",
     "contact": "お問い合わせ"
   },
+  "hero": {
+    "greeting": "はじめまして、",
+    "name": "金炫敃",
+    "role": "フルスタックエンジニア",
+    "description": "パフォーマンスとユーザー体験を最優先に考えるエンジニアです。React · Spring Boot · Python を使い、「正しく動き、速く動くコード」を追求します。",
+    "cta": "プロジェクトを見る",
+    "contact": "お問い合わせ"
+  },
   "projects": {
     "title": "プロジェクト",
     "viewDemo": "デモを見る",
@@ -16,12 +24,18 @@
     "viewBackend": "バックエンド",
     "noProjects": "プロジェクトがありません。",
     "tags": "タグ",
-    "allTags": "すべて"
+    "allTags": "すべて",
+    "teamProject": "チームプロジェクト",
+    "personalProject": "個人プロジェクト",
+    "role": "担当役割"
   },
   "about": {
     "title": "紹介",
-    "bio": "はじめまして！フルスタックエンジニアのキム・ヒョンミン（金炫敃）です。ReactとSpring Bootを使ったWebサービス開発を中心に、Pythonを用いた自動化ツールも手がけています。フロントエンドからバックエンドまで、ユーザー中心のサービスを作ることを楽しんでいます。",
-    "skillsTitle": "技術スタック"
+    "bio": "はじめまして、フルスタックエンジニアのキム・ヒョンミン（金炫敃）です。「正しく動き、速く動くコード」を目標に、バックエンドの処理速度・安定性とフロントエンドのレンダリング効率・ユーザー体験を同時に考えながら開発に取り組んでいます。Figmaを用いた画面設計からReact・Spring Bootのフルスタック実装、Python自動化、Flutterアプリ開発まで幅広く経験しています。",
+    "skillsTitle": "技術スタック",
+    "educationTitle": "学歴",
+    "certificationsTitle": "資格 / 語学",
+    "activitiesTitle": "経験 / 活動 / 教育"
   },
   "contact": {
     "title": "お問い合わせ",
@@ -38,6 +52,6 @@
     "ja": "日本語"
   },
   "meta": {
-    "description": "フルスタックエンジニア金炫敃のポートフォリオ — React・Spring Boot・Python プロジェクト集"
+    "description": "フルスタックエンジニア金炫敃のポートフォリオ — React・Spring Boot・Python・Flutter プロジェクト集"
   }
 }

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { Github, Code, ExternalLink } from 'lucide-react';
+import { Github, Code, ExternalLink, Users, User, Calendar } from 'lucide-react';
 
 export const cardVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -11,7 +11,7 @@ export const cardVariants = {
   },
 };
 
-function ProjectCard({ title, description, tags = [], demoUrl, codeUrl, backendUrl, thumbnail }) {
+function ProjectCard({ title, description, tags = [], demoUrl, codeUrl, backendUrl, thumbnail, isTeam, role, period }) {
   const { t } = useTranslation();
 
   return (
@@ -31,9 +31,37 @@ function ProjectCard({ title, description, tags = [], demoUrl, codeUrl, backendU
       )}
 
       <div className="p-6 flex-1">
+        {/* 배지 행: 팀/개인 + 기간 */}
+        <div className="flex items-center gap-2 mb-3 flex-wrap">
+          {isTeam ? (
+            <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-violet-100 dark:bg-violet-500/15 text-violet-600 dark:text-violet-300 border border-violet-200 dark:border-violet-500/25">
+              <Users size={10} />
+              {t('projects.teamProject')}
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-500/25">
+              <User size={10} />
+              {t('projects.personalProject')}
+            </span>
+          )}
+          {period && (
+            <span className="inline-flex items-center gap-1 text-[11px] text-slate-400 dark:text-slate-500">
+              <Calendar size={10} />
+              {period}
+            </span>
+          )}
+        </div>
+
         <h3 className="text-base font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">
           {title}
         </h3>
+
+        {role && (
+          <p className="text-xs text-indigo-500 dark:text-indigo-400 font-medium mb-2">
+            {t('projects.role')}: {role}
+          </p>
+        )}
+
         <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-5">
           {description}
         </p>
