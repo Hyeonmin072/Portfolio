@@ -1,0 +1,27 @@
+{
+  "header": {
+    "title": "포트폴리오",
+    "subtitle": "프로젝트 데모 모음"
+  },
+  "nav": {
+    "home": "홈",
+    "projects": "프로젝트",
+    "about": "소개",
+    "contact": "연락처"
+  },
+  "projects": {
+    "title": "프로젝트",
+    "viewDemo": "데모 보기",
+    "viewCode": "코드 보기",
+    "noProjects": "프로젝트가 없습니다.",
+    "tags": "태그"
+  },
+  "footer": {
+    "rights": "모든 권리 보유.",
+    "madeWith": "으로 제작"
+  },
+  "language": {
+    "ko": "한국어",
+    "ja": "日本語"
+  }
+}

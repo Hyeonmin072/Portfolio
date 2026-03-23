@@ -1,0 +1,27 @@
+{
+  "header": {
+    "title": "ポートフォリオ",
+    "subtitle": "プロジェクトデモ集"
+  },
+  "nav": {
+    "home": "ホーム",
+    "projects": "プロジェクト",
+    "about": "紹介",
+    "contact": "お問い合わせ"
+  },
+  "projects": {
+    "title": "プロジェクト",
+    "viewDemo": "デモを見る",
+    "viewCode": "コードを見る",
+    "noProjects": "プロジェクトがありません。",
+    "tags": "タグ"
+  },
+  "footer": {
+    "rights": "全著作権所有。",
+    "madeWith": "で制作"
+  },
+  "language": {
+    "ko": "한국어",
+    "ja": "日本語"
+  }
+}
