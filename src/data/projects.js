@@ -34,7 +34,7 @@ export const PROJECTS = [
     tags: ['Python', 'Flask', 'WebSocket', 'Docker', 'SQLite', 'Binance API'],
     codeUrl: 'https://github.com/Hyeonmin072/HyeonAutoTrade',
     isTeam: false,
-    period: '2024',
+    period: '2026',
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ export const PROJECTS = [
     tags: ['Python', 'Discord.py', 'LSTM', 'AI/ML', 'Supabase'],
     codeUrl: 'https://github.com/Hyeonmin072/BGHChatBot',
     isTeam: false,
-    period: '2024',
+    period: '2026',
   },
   {
     id: 5,
@@ -54,7 +54,7 @@ export const PROJECTS = [
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Docker'],
     codeUrl: 'https://github.com/Hyeonmin072/BGHDashboard',
     isTeam: false,
-    period: '2024',
+    period: '2026',
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ export const PROJECTS = [
     tags: ['Java', 'Spring Boot', 'MySQL', 'Docker', 'REST API'],
     codeUrl: 'https://github.com/Hyeonmin072/ERGG',
     isTeam: false,
-    period: '2024',
+    period: '2025',
   },
   {
     id: 7,
@@ -74,6 +74,6 @@ export const PROJECTS = [
     tags: ['Flutter', 'Firebase', 'Riverpod', 'Firestore', 'Dart'],
     codeUrl: 'https://github.com/Hyeonmin072/culcom_app',
     isTeam: false,
-    period: '2024',
+    period: '2025',
   },
 ];
