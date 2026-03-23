@@ -1,44 +1,53 @@
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Header from './components/Header/Header';
 import ProjectGrid from './components/ProjectGrid/ProjectGrid';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
-import './App.css';
-
-/**
- * Sample projects — replace or extend this array to add more demo projects.
- * Each entry is passed as props to <ProjectCard />.
- */
-const PROJECTS = [
-  {
-    id: 1,
-    title: 'Project Alpha',
-    description: 'A full-stack web application built with React and Node.js.',
-    tags: ['React', 'Node.js', 'MongoDB'],
-    demoUrl: 'https://example.com/alpha',
-    codeUrl: 'https://github.com/example/alpha',
-  },
-  {
-    id: 2,
-    title: 'Project Beta',
-    description: 'A mobile-first e-commerce site with real-time updates.',
-    tags: ['Next.js', 'Tailwind', 'Supabase'],
-    demoUrl: 'https://example.com/beta',
-    codeUrl: 'https://github.com/example/beta',
-  },
-  {
-    id: 3,
-    title: 'Project Gamma',
-    description: 'A CLI tool that automates infrastructure provisioning.',
-    tags: ['Go', 'Terraform', 'AWS'],
-    codeUrl: 'https://github.com/example/gamma',
-  },
-];
+import { PROJECTS } from './data/projects';
 
 function App() {
+  const { i18n, t } = useTranslation();
+
+  const [theme, setTheme] = useState(() => {
+    const stored = localStorage.getItem('theme');
+    if (stored) return stored;
+    return 'dark';
+  });
+
+  // 테마 클래스를 <html>에 적용
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  // 언어 변경 시 <html lang> 속성 업데이트
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
+  // 언어 변경 시 document.title 업데이트
+  useEffect(() => {
+    document.title = t('header.title');
+  }, [i18n.language, t]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
-    <div className="app">
-      <Header />
-      <main>
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-navy-950 text-gray-900 dark:text-white/87 transition-colors duration-200">
+      <Header theme={theme} toggleTheme={toggleTheme} />
+      <main className="flex-1">
         <ProjectGrid projects={PROJECTS} />
+        <About />
+        <Contact />
       </main>
       <Footer />
     </div>
@@ -46,4 +55,3 @@ function App() {
 }
 
 export default App;
-

@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import './LanguageSwitcher.css';
 
 const LANGUAGES = [
   { code: 'ko', label: '한국어' },
@@ -10,13 +9,17 @@ function LanguageSwitcher() {
   const { i18n } = useTranslation();
 
   return (
-    <div className="language-switcher">
+    <div className="flex gap-1">
       {LANGUAGES.map(({ code, label }) => (
         <button
           key={code}
-          className={`lang-btn${i18n.language === code ? ' active' : ''}`}
           onClick={() => i18n.changeLanguage(code)}
           aria-label={`Switch to ${label}`}
+          className={`px-2.5 py-1 rounded-md text-xs font-medium transition-colors ${
+            i18n.language === code
+              ? 'bg-violet-500 text-white'
+              : 'text-gray-600 dark:text-white/67 hover:bg-gray-100 dark:hover:bg-navy-700'
+          }`}
         >
           {label}
         </button>

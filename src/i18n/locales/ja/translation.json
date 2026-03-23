@@ -1,7 +1,7 @@
 {
   "header": {
-    "title": "ポートフォリオ",
-    "subtitle": "プロジェクトデモ集"
+    "title": "金炫敃",
+    "subtitle": "フルスタックエンジニア"
   },
   "nav": {
     "home": "ホーム",
@@ -12,9 +12,22 @@
   "projects": {
     "title": "プロジェクト",
     "viewDemo": "デモを見る",
-    "viewCode": "コードを見る",
+    "viewCode": "フロントエンド",
+    "viewBackend": "バックエンド",
     "noProjects": "プロジェクトがありません。",
-    "tags": "タグ"
+    "tags": "タグ",
+    "allTags": "すべて"
+  },
+  "about": {
+    "title": "紹介",
+    "bio": "はじめまして！フルスタックエンジニアのキム・ヒョンミン（金炫敃）です。ReactとSpring Bootを使ったWebサービス開発を中心に、Pythonを用いた自動化ツールも手がけています。フロントエンドからバックエンドまで、ユーザー中心のサービスを作ることを楽しんでいます。",
+    "skillsTitle": "技術スタック"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "プロジェクトやコラボレーションに興味があればお気軽にご連絡ください。",
+    "emailLabel": "メールを送る",
+    "githubLabel": "GitHub"
   },
   "footer": {
     "rights": "全著作権所有。",
@@ -23,5 +36,8 @@
   "language": {
     "ko": "한국어",
     "ja": "日本語"
+  },
+  "meta": {
+    "description": "フルスタックエンジニア金炫敃のポートフォリオ — React・Spring Boot・Python プロジェクト集"
   }
 }
