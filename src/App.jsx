@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Header from './components/Header/Header';
+import Hero from './components/Hero/Hero';
 import ProjectGrid from './components/ProjectGrid/ProjectGrid';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
@@ -11,9 +12,7 @@ function App() {
   const { i18n, t } = useTranslation();
 
   const [theme, setTheme] = useState(() => {
-    const stored = localStorage.getItem('theme');
-    if (stored) return stored;
-    return 'dark';
+    return localStorage.getItem('theme') || 'dark';
   });
 
   // 테마 클래스를 <html>에 적용
@@ -34,7 +33,7 @@ function App() {
 
   // 언어 변경 시 document.title 업데이트
   useEffect(() => {
-    document.title = t('header.title');
+    document.title = t('header.title') + ' | ' + (i18n.language === 'ko' ? '풀스택 개발자' : 'フルスタックエンジニア');
   }, [i18n.language, t]);
 
   const toggleTheme = () => {
@@ -42,9 +41,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-navy-950 text-gray-900 dark:text-white/87 transition-colors duration-200">
+    <div className="min-h-screen flex flex-col">
       <Header theme={theme} toggleTheme={toggleTheme} />
       <main className="flex-1">
+        <Hero />
         <ProjectGrid projects={PROJECTS} />
         <About />
         <Contact />
