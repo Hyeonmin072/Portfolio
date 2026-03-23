@@ -142,7 +142,7 @@ function About() {
                         ? 'bg-indigo-100 dark:bg-indigo-500/15 text-indigo-600 dark:text-indigo-300'
                         : 'bg-violet-100 dark:bg-violet-500/15 text-violet-600 dark:text-violet-300'
                     }`}>
-                      {cert.type}
+                      {t(`certType.${cert.type}`, cert.type)}
                     </span>
                   </div>
                 </li>
@@ -164,7 +164,7 @@ function About() {
                         ? 'bg-emerald-100 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-300'
                         : 'bg-amber-100 dark:bg-amber-500/15 text-amber-600 dark:text-amber-300'
                     }`}>
-                      {act.type}
+                      {t(`actType.${act.type}`, act.type)}
                     </span>
                   </div>
                   <span className="text-xs text-indigo-500 dark:text-indigo-400">
